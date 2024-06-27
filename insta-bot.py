@@ -40,7 +40,7 @@ def initialize_browser():
     options.add_argument("--log-level=3")
 
     # Initialize chrome driver and set chrome as our browser
-    browser = webdriver.Chrome(executable_path=CM().install(), options=options)
+    browser = webdriver.Chrome(executable_path=CM(version="latest").install(), options=options)
 
     return browser
 

@@ -13,6 +13,7 @@ from random import randint
 # Library Imports
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager as CM
 from tkinter import *
 from tkinter.scrolledtext import ScrolledText
@@ -54,10 +55,10 @@ def login_to_instagram(browser):
         database = json.load(file)
 
     browser.implicitly_wait(30)
-    username = browser.find_element_by_name('username')
+    username = browser.find_element(By.NAME, 'username')
     username.send_keys(database['credentials']['username'])
     browser.implicitly_wait(30)
-    password = browser.find_element_by_name('password')
+    password = browser.find_element(By.NAME, 'password')
     password.send_keys(database['credentials']['password'])
 
     sleep(2)
